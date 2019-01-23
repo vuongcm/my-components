@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ColorClock</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+}
+#clock {
+  text-align: center;
+}
+#clock {
+  display: nne;
+}
+html, body {
+  height: 100%;
+}
+
+#clock {
+  text-align: center;
+  position: relative;
+  top: 45%;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-size: 5rem;
+}
+</style>
+</head>
+<body>
+  <div id="clock">12:13:14</div>
+<script id="jsbin-javascript">
+function clockColor(){
+var date = new Date();
+var hours = date.getHours();
+var minutes=date.getMinutes();
+var seconds=date.getSeconds();
+if (hours<10) {
+  hours='0'+hours;
+}
+if (minutes<10) {
+  minutes='0'+minutes;
+}
+if (seconds<10) {
+  seconds='0'+seconds;
+}
+var clockFace=hours+':'+minutes+':'+seconds;
+var hexColor='#'+hours+minutes+seconds;
+console.log(clockFace);
+document.getElementById('clock').innerHTML=clockFace;
+document.body.style.background =hexColor;
+setTimeout(function(){
+  clockColor();}, 1000);
+}
+clockColor();
+</script>
+</body>
+</html>
